@@ -40,7 +40,7 @@ class ExerciseViewModel: ViewModel() {
     }
 
     fun setMaxNumWordsRecalled(numWords: Int) {
-        _maxNumWordsRecalled.value = 10
+        _maxNumWordsRecalled.value = numWords
     }
 
     /*

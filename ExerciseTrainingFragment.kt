@@ -125,10 +125,12 @@ class ExerciseTrainingFragment : Fragment() {
 
                 // When last button of level is clicked
                 if (wordNum == viewModel.level.value) {
+                    binding.constraintLayout.removeView(binding.test)
+                    binding.constraintLayout.addView(binding.test)
                     if (isLevelPassed) {
-                      //  if (viewModel.level.value!! > viewModel.maxNumWordsRecalled.value!!) {
-                            //viewModel.setMaxNumWordsRecalled(8)
-                        //}
+                        if (viewModel.level.value!! > viewModel.maxNumWordsRecalled.value!!) {
+                            viewModel.setMaxNumWordsRecalled(viewModel.level.value!!)
+                        }
                         viewModel.setLevel(viewModel.level.value?.plus(1)!!)
                     } else {
                         if (viewModel.level.value!! > 2) {

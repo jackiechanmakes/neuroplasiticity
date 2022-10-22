@@ -28,8 +28,6 @@ class ExerciseEndFragment : Fragment() {
         binding.exerciseViewModel = viewModel
         binding.lifecycleOwner = viewLifecycleOwner
         binding?.apply {
-            //binding.exerciseViewModel = viewModel
-            //binding.lifecycleOwner = viewLifecycleOwner
             exerciseEndFragment = this@ExerciseEndFragment
         }
     }
