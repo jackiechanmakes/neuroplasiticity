@@ -7,6 +7,9 @@
         <variable
             name="exerciseViewModel"
             type="com.example.neuroplasticity.ui.exercise.ExerciseViewModel" />
+        <variable
+            name="exerciseInstructionsFragment"
+            type="com.example.neuroplasticity.ExerciseInstructionsFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

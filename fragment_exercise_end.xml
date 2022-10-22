@@ -40,7 +40,7 @@
             app:layout_constraintTop_toBottomOf="@id/endMessage"
             tools:text="Max Number of Words Recalled"
             android:textSize="30sp"
-            android:text="@{@string/words_recalled(exerciseViewModel.level)}"
+            android:text="@{@string/words_recalled(exerciseViewModel.maxNumWordsRecalled)}"
             />
 
         <Button

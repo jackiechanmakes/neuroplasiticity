@@ -12,6 +12,7 @@ import androidx.annotation.Nullable
 import androidx.core.view.doOnLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -19,7 +20,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.neuroplasticity.ui.exercise.ExerciseViewModel
 
 class ExerciseTrainingFragment : Fragment() {
-    private val viewModel: ExerciseViewModel by viewModels()
+    private val viewModel: ExerciseViewModel by activityViewModels()
     private lateinit var binding: com.example.neuroplasticity.databinding.FragmentExerciseTrainingBinding
 
     override fun onCreateView(
@@ -125,8 +126,6 @@ class ExerciseTrainingFragment : Fragment() {
 
                 // When last button of level is clicked
                 if (wordNum == viewModel.level.value) {
-                    binding.constraintLayout.removeView(binding.test)
-                    binding.constraintLayout.addView(binding.test)
                     if (isLevelPassed) {
                         if (viewModel.level.value!! > viewModel.maxNumWordsRecalled.value!!) {
                             viewModel.setMaxNumWordsRecalled(viewModel.level.value!!)

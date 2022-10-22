@@ -11,12 +11,13 @@ import android.widget.TextView
 import androidx.core.view.doOnLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.activityViewModels
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.neuroplasticity.ui.exercise.ExerciseViewModel
 
 class ExerciseStartFragment: Fragment() {
-    private val viewModel: ExerciseViewModel by viewModels()
+    private val viewModel: ExerciseViewModel by activityViewModels()
     private lateinit var binding: com.example.neuroplasticity.databinding.FragmentExerciseStartBinding
 
     override fun onCreateView(
@@ -34,6 +35,7 @@ class ExerciseStartFragment: Fragment() {
         binding.lifecycleOwner = viewLifecycleOwner
 
         binding.startButton.setOnClickListener {
+            viewModel.reinitializeData()
             findNavController().navigate(R.id.action_exerciseStartFragment_to_exerciseTrainingFragment)
         }
     }

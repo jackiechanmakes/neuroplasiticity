@@ -26,9 +26,7 @@ class ExerciseViewModel: ViewModel() {
     val maxNumWordsRecalled: LiveData<Int> = _maxNumWordsRecalled
 
     init {
-        _level.value = 2
-        _numTriesLeft.value = 2
-        _maxNumWordsRecalled.value = 3
+        reinitializeData()
     }
 
     fun setLevel(updatedLevel: Int) {
@@ -83,5 +81,8 @@ class ExerciseViewModel: ViewModel() {
         usedWordsList.clear()
         levelWordsList.clear()
         _stimuliText.value = ""
+        _level.value = 2
+        _numTriesLeft.value = 2
+        _maxNumWordsRecalled.value = 0
     }
 }
