@@ -16,19 +16,21 @@
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ExerciseStartFragment">
+        tools:context=".ExerciseStartFragment"
+        android:background="@color/air_superiority_blue">
 
         <TextView
             android:id="@+id/instructionsText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:text="@string/instructions"
+            android:text="@string/start_directions"
             android:textSize="40sp"
             app:layout_constraintBottom_toTopOf="@+id/startButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            tools:text="@string/instructions" />
+            tools:text="@string/start_directions"
+            android:background="@color/eggshell"/>
 
         <Button
             android:id="@+id/startButton"
@@ -41,6 +43,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            tools:text="@string/start" />
+            tools:text="@string/start"
+            android:textColor="@color/queen_blue"
+            android:backgroundTint="@color/eggshell"
+            app:strokeColor="@color/queen_blue"
+            app:strokeWidth="5dp"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -3,21 +3,15 @@ package com.example.neuroplasticity
 import android.graphics.Point
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
 import android.widget.Button
-import android.widget.TextView
-import androidx.annotation.Nullable
 import androidx.core.view.doOnLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
 import androidx.navigation.fragment.findNavController
 import com.example.neuroplasticity.ui.exercise.ExerciseViewModel
+import android.view.Menu
 
 class ExerciseTrainingFragment : Fragment() {
     private val viewModel: ExerciseViewModel by activityViewModels()
@@ -43,6 +37,11 @@ class ExerciseTrainingFragment : Fragment() {
         binding.constraintLayout.removeView(binding.stimuli)
         startExercise()
     }
+
+    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menuInflater.inflate(R.menu.menu_toolbar, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }*/
 
     private fun startExercise() {
         viewModel.setWordsNextLevel()
@@ -86,7 +85,7 @@ class ExerciseTrainingFragment : Fragment() {
         val gapDistance = 10
 
         var buttonX = (0..(width - button.width)).random()
-        var buttonY = (0..(height - button.height -
+        var buttonY = (getActionBarHeight()..(height - button.height -
                 getNavigationBarHeight() - getStatusBarHeight() - gapDistance)).random()
 
         return Point(buttonX, buttonY)
@@ -157,14 +156,16 @@ class ExerciseTrainingFragment : Fragment() {
         return statusBarHeight
     }
 
-    /*fun getActionBarHeight(): Int {
+    fun getActionBarHeight(): Int {
+
         var actionBarHeight = 0
+
         val styledAttributes =
-            requireActivity().theme.obtainStyledAttributes(intArrayOf(R.attr.actionBarSize))
+            requireContext().theme.obtainStyledAttributes(intArrayOf(android.R.attr.actionBarSize))
         actionBarHeight = styledAttributes.getDimension(0, 0f).toInt()
         styledAttributes.recycle()
         return actionBarHeight
-    }*/
+    }
 
     fun getNavigationBarHeight(): Int {
         var navigationBarHeight = 0
