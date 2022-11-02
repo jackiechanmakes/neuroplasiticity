@@ -39,19 +39,17 @@ class ExerciseTrainingFragment : Fragment() {
         }
 
         // Set up menu toolbar
-        val menuHost: MenuHost = requireActivity()
+        binding.toolbar.inflateMenu(R.menu.menu_toolbar)
 
-        menuHost.addMenuProvider(object : MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
-                // Add menu items here
-                menuInflater.inflate(R.menu.menu_toolbar, menu)
+        binding.toolbar.setOnMenuItemClickListener {
+            when (it.itemId) {
+                R.id.exercisePausedFragment -> {
+                    findNavController().navigate(R.id.action_exerciseTrainingFragment_to_exercisePausedFragment)
+                    true
+                }
+                else -> false
             }
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                // Handle the menu selection
-                findNavController().navigate(R.id.action_exerciseTrainingFragment_to_exercisePausedFragment)
-                return true
-            }
-        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+        }
 
         // Start exercise training
         binding.constraintLayout.removeView(binding.stimuli)

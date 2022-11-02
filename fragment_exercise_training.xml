@@ -17,6 +17,12 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ExerciseTrainingFragment">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?android:attr/actionBarSize"
+            app:layout_constraintTop_toTopOf="parent"
+            style="@style/Widget.MaterialComponents.Toolbar.Primary" />
         <TextView
             android:id="@+id/stimuli"
             android:layout_width="wrap_content"

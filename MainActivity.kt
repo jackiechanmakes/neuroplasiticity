@@ -19,14 +19,6 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
             .findFragmentById(R.id.nav_host_fragment) as NavHostFragment
         // Instantiate the navController using the NavHostFragment
         navController = navHostFragment.navController
-
-        val toolbar = findViewById<MaterialToolbar>(R.id.toolbar)
-        setSupportActionBar(toolbar)
-
-        supportActionBar?.setDisplayShowTitleEnabled(false)
-
-        // Instantiate the navController using the NavHostFragment
-        setupActionBarWithNavController(navController)
     }
 
     /**
