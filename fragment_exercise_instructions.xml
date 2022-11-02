@@ -36,6 +36,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/start"
+            android:onClick="@{() -> exerciseInstructionsFragment.goToStartScreen()}"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintTop_toTopOf="parent"

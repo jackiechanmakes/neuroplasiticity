@@ -35,7 +35,7 @@ class ExerciseInstructionsFragment : Fragment() {
     /**
      * Navigate to the start screen.
      */
-    fun goToNextScreen() {
+    fun goToStartScreen() {
         findNavController().navigate(R.id.action_exerciseInstructionsFragment_to_exerciseStartFragment)
     }
 

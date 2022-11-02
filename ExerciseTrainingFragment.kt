@@ -5,13 +5,17 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.*
 import android.widget.Button
+import androidx.core.content.ContentProviderCompat.requireContext
+import androidx.core.view.MenuHost
+import androidx.core.view.MenuProvider
 import androidx.core.view.doOnLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.neuroplasticity.ui.exercise.ExerciseViewModel
-import android.view.Menu
+
 
 class ExerciseTrainingFragment : Fragment() {
     private val viewModel: ExerciseViewModel by activityViewModels()
@@ -34,14 +38,25 @@ class ExerciseTrainingFragment : Fragment() {
             exerciseTrainingFragment = this@ExerciseTrainingFragment
         }
 
+        // Set up menu toolbar
+        val menuHost: MenuHost = requireActivity()
+
+        menuHost.addMenuProvider(object : MenuProvider {
+            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {
+                // Add menu items here
+                menuInflater.inflate(R.menu.menu_toolbar, menu)
+            }
+            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
+                // Handle the menu selection
+                findNavController().navigate(R.id.action_exerciseTrainingFragment_to_exercisePausedFragment)
+                return true
+            }
+        }, viewLifecycleOwner, Lifecycle.State.RESUMED)
+
+        // Start exercise training
         binding.constraintLayout.removeView(binding.stimuli)
         startExercise()
     }
-
-    /*override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        menuInflater.inflate(R.menu.menu_toolbar, menu)
-        super.onCreateOptionsMenu(menu, inflater)
-    }*/
 
     private fun startExercise() {
         viewModel.setWordsNextLevel()

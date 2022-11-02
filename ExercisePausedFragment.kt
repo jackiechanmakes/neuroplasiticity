@@ -35,8 +35,22 @@ class ExercisePausedFragment : Fragment() {
     /**
      * Navigate to the start screen.
      */
-    fun goToNextScreen() {
+    fun goToStartScreen() {
         findNavController().navigate(R.id.action_exercisePausedFragment_to_exerciseStartFragment)
+    }
+
+    /**
+     * Navigate to the instructions screen.
+     */
+    fun goToInstructionsScreen() {
+        findNavController().navigate(R.id.action_exercisePausedFragment_to_exerciseInstructionsFragment)
+    }
+
+    /**
+     * Navigate to the training screen.
+     */
+    fun goToTrainingScreen() {
+        findNavController().navigate(R.id.action_exercisePausedFragment_to_exerciseTrainingFragment)
     }
 
     /**
