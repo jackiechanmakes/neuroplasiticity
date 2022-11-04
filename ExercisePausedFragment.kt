@@ -30,6 +30,9 @@ class ExercisePausedFragment : Fragment() {
         binding?.apply {
             exercisePausedFragment = this@ExercisePausedFragment
         }
+
+        // Set up menu toolbar
+        binding.toolbar.inflateMenu(R.menu.menu_toolbar_end)
     }
 
     /**
