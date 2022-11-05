@@ -16,7 +16,8 @@
         android:id="@+id/constraint_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ExercisePausedFragment">
+        tools:context=".ExercisePausedFragment"
+        android:background="@color/queen_blue">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -30,26 +31,36 @@
                 android:layout_height="wrap_content"
                 android:text="@string/pause"
                 android:textSize="25sp"
-                android:layout_gravity="center"/>
+                android:textColor="@color/queen_blue"
+                android:fontFamily="sans-serif-medium"
+                android:layout_gravity="center" />
 
         </androidx.appcompat.widget.Toolbar>
 
         <Button
             android:id="@+id/instructionsButton"
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="280dp"
+            android:fontFamily="sans-serif-medium"
+            android:onClick="@{() -> exercisePausedFragment.goToInstructionsScreen()}"
+            android:padding="30dp"
             android:text="@string/instruction_button"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            app:layout_constraintStart_toStartOf="parent"
+            android:textColor="@color/queen_blue"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintBottom_toTopOf="@id/restartButton"
+            app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            android:onClick="@{() -> exercisePausedFragment.goToInstructionsScreen()}"
+            app:strokeColor="@color/cerulean_crayola"
+            app:strokeWidth="10dp"
             tools:text="@string/instruction_button" />
 
         <Button
             android:id="@+id/restartButton"
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
             android:text="@string/restart_button"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
@@ -58,19 +69,34 @@
             app:layout_constraintTop_toBottomOf="@id/instructionsButton"
             app:layout_constraintBottom_toTopOf="@id/continueButton"
             android:onClick="@{() -> exercisePausedFragment.goToStartScreen()}"
-            tools:text="@string/restart_button" />
+            tools:text="@string/restart_button"
+            android:textSize="34sp"
+            android:textColor="@color/queen_blue"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center"
+            android:padding="30dp"
+            app:strokeWidth="10dp"
+            app:strokeColor="@color/cerulean_crayola" />
 
         <Button
             android:id="@+id/continueButton"
-            android:layout_width="wrap_content"
+            android:layout_width="400dp"
             android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginBottom="100dp"
+            android:fontFamily="sans-serif-medium"
+            android:onClick="@{() -> exercisePausedFragment.goToTrainingScreen()}"
+            android:padding="30dp"
             android:text="@string/continue_button"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/restartButton"
+            android:textColor="@color/queen_blue"
+            android:textSize="34sp"
             app:layout_constraintBottom_toBottomOf="parent"
-            android:onClick="@{() -> exercisePausedFragment.goToTrainingScreen()}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/restartButton"
+            app:strokeColor="@color/cerulean_crayola"
+            app:strokeWidth="10dp"
             tools:text="@string/continue_button" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

@@ -1,18 +1,16 @@
 package com.example.neuroplasticity
 
+import android.graphics.Color
 import android.graphics.Point
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.*
 import android.widget.Button
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.view.MenuHost
-import androidx.core.view.MenuProvider
+import androidx.core.content.ContextCompat
 import androidx.core.view.doOnLayout
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.example.neuroplasticity.ui.exercise.ExerciseViewModel
 
@@ -39,7 +37,7 @@ class ExerciseTrainingFragment : Fragment() {
         }
 
         // Set up menu toolbar
-        binding.toolbar.inflateMenu(R.menu.menu_toolbar)
+        binding.toolbar.inflateMenu(R.menu.menu_toolbar_training)
 
         binding.toolbar.setOnMenuItemClickListener {
             when (it.itemId) {
@@ -74,6 +72,10 @@ class ExerciseTrainingFragment : Fragment() {
                 button.x = buttonPosition.x.toFloat()
                 button.y = buttonPosition.y.toFloat()
             }
+            button.setTextColor(ContextCompat.getColor(requireActivity(), R.color.queen_blue))
+            button.textSize = 22F
+            button.isAllCaps = false
+            button.setBackgroundResource(R.drawable.training_button);
             binding.constraintLayout.addView(button)
             buttonViewsList.add(button)
         }

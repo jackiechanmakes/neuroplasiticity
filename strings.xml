@@ -11,5 +11,6 @@
     <string name="results">Results</string>
     <string name="pause">Exercise Paused</string>
     <string name="instructions">Exercise Instructions</string>
-    <string name="words_recalled">Max Number of Words Recalled: %s</string>
+    <string name="max_words_recalled">Max Number of Words Recalled: %s</string>
+    <string name="words_recalled">Words Recalled: %s</string>
 </resources>
