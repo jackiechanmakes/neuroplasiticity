@@ -32,7 +32,7 @@ class ExercisePausedFragment : Fragment() {
         }
 
         // Set up menu toolbar
-        binding.toolbar.inflateMenu(R.menu.menu_toolbar_end)
+        binding.toolbar.inflateMenu(R.menu.menu_toolbar)
     }
 
     /**

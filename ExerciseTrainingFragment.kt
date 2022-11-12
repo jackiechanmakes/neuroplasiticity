@@ -1,6 +1,5 @@
 package com.example.neuroplasticity
 
-import android.graphics.Color
 import android.graphics.Point
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -37,17 +36,7 @@ class ExerciseTrainingFragment : Fragment() {
         }
 
         // Set up menu toolbar
-        binding.toolbar.inflateMenu(R.menu.menu_toolbar_training)
-
-        binding.toolbar.setOnMenuItemClickListener {
-            when (it.itemId) {
-                R.id.exercisePausedFragment -> {
-                    findNavController().navigate(R.id.action_exerciseTrainingFragment_to_exercisePausedFragment)
-                    true
-                }
-                else -> false
-            }
-        }
+        binding.toolbar.inflateMenu(R.menu.menu_toolbar)
 
         // Start exercise training
         binding.constraintLayout.removeView(binding.stimuli)
@@ -224,5 +213,12 @@ class ExerciseTrainingFragment : Fragment() {
      */
     private fun exitExercise() {
         activity?.finish()
+    }
+
+    /**
+     * Navigate to the start screen.
+     */
+    fun goToPauseScreen() {
+        findNavController().navigate(R.id.action_exerciseTrainingFragment_to_exercisePausedFragment)
     }
 }
