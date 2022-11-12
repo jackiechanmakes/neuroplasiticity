@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/exerciseStartFragment">
+    <fragment
+        android:id="@+id/exerciseStartFragment"
+        android:name="com.example.neuroplasticity.ExerciseStartFragment" >
+        //android:label="ExerciseStartFragment" >
+        <action
+            android:id="@+id/action_exerciseStartFragment_to_exerciseTrainingFragment"
+            app:destination="@id/exerciseTrainingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseInstructionsFragment"
+        android:name="com.example.neuroplasticity.ExerciseInstructionsFragment" >
+        //android:label="ExerciseInstructionsFragment" >
+        <action
+            android:id="@+id/action_exerciseInstructionsFragment_to_exerciseStartFragment"
+            app:destination="@id/exerciseStartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseEndFragment"
+        android:name="com.example.neuroplasticity.ExerciseEndFragment" >
+        // android:label="ExerciseEndFragment" >
+        <action
+            android:id="@+id/action_exerciseEndFragment_to_exerciseStartFragment"
+            app:destination="@id/exerciseStartFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exercisePausedFragment"
+        android:name="com.example.neuroplasticity.ExercisePausedFragment" >
+        // android:label="ExercisePausedFragment" >
+        <action
+            android:id="@+id/action_exercisePausedFragment_to_exerciseInstructionsFragment"
+            app:destination="@id/exerciseInstructionsFragment" />
+        <action
+            android:id="@+id/action_exercisePausedFragment_to_exerciseStartFragment"
+            app:destination="@id/exerciseStartFragment" />
+        <action
+            android:id="@+id/action_exercisePausedFragment_to_exerciseTrainingFragment"
+            app:destination="@id/exerciseTrainingFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/exerciseTrainingFragment"
+        android:name="com.example.neuroplasticity.ExerciseTrainingFragment" >
+        // android:label="ExerciseTrainingFragment" >
+        <action
+            android:id="@+id/action_exerciseTrainingFragment_to_exerciseEndFragment"
+            app:destination="@id/exerciseEndFragment" />
+        <action
+            android:id="@+id/action_exerciseTrainingFragment_to_exercisePausedFragment"
+            app:destination="@id/exercisePausedFragment" />
+    </fragment>
+</navigation>

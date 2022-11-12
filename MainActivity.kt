@@ -2,6 +2,7 @@ package com.example.neuroplasticity
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -12,6 +13,10 @@ class MainActivity : AppCompatActivity(R.layout.activity_main) {
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
+        // Enable support for Splash Screen API for
+        // proper Android 12+ support
+        installSplashScreen()
+
         super.onCreate(savedInstanceState)
 
         // Get the navigation host fragment from this Activity
