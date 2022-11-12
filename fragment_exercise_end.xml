@@ -86,7 +86,6 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/result"
             app:strokeColor="@color/cerulean_crayola"
-            android:background="@color/eggshell"
             app:strokeWidth="7dp"
             tools:text="Try Again" />
     </androidx.constraintlayout.widget.ConstraintLayout>
