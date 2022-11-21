@@ -186,10 +186,27 @@ class ExerciseTrainingFragment : Fragment() {
         }
     }
 
+    private fun getStimuliDisplayTime(): Long {
+        var stimuliDisplayTime: Long = 2000
+        val difficultyLevel = 5
+        val timeNewWordEasy = 500
+        val timeNewWordHard = 1500
+
+        if (viewModel.level.value!! <= difficultyLevel) {
+            stimuliDisplayTime += timeNewWordEasy * viewModel.level.value!!
+        } else {
+            stimuliDisplayTime += timeNewWordEasy * difficultyLevel
+            stimuliDisplayTime += timeNewWordHard * (viewModel.level.value!! - difficultyLevel)
+        }
+        return stimuliDisplayTime
+    }
+
     private fun displayStimuliText() {
         binding.constraintLayout.addView(binding.stimuli)
-        val timer = object: CountDownTimer(3000, 1000) {
-            override fun onTick(millisUntilFinished: Long) {}
+        val stimuliDisplayTime = getStimuliDisplayTime()
+        val timer = object: CountDownTimer(stimuliDisplayTime, 1000) {
+            override fun onTick(millisUntilFinished: Long) {
+            }
 
             override fun onFinish() {
                 binding.constraintLayout.removeView(binding.stimuli)
