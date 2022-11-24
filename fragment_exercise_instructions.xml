@@ -40,29 +40,30 @@
             android:id="@+id/instructionsText"
             android:layout_width="350dp"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="150dp"
+            android:layout_marginBottom="250dp"
             android:background="@color/eggshell"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:padding="20dp"
             android:text="@string/instruction_directions"
             android:textColor="@color/queen_blue"
-            android:textSize="40sp"
+            android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/instruction_directions" />
 
-        <Button
-            android:id="@+id/startButton"
+        <TextView
+            android:id="@+id/stimuli"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="150dp"
-            android:backgroundTint="@color/eggshell"
+            android:background="@color/eggshell"
             android:onClick="@{() -> exerciseInstructionsFragment.goToStartScreen()}"
             android:padding="20dp"
-            android:text="@string/start"
+            android:visibility="gone"
+            android:text="brain heal work"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textColor="@color/queen_blue"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -75,5 +76,28 @@
             tools:text="@string/start"
             android:fontFamily="sans-serif-medium"
             android:textSize="30sp"/>
+
+        <TextView
+            android:id="@+id/startButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/eggshell"
+            android:fontFamily="sans-serif-medium"
+            android:onClick="@{() -> exerciseInstructionsFragment.goToStartScreen()}"
+            android:padding="20dp"
+            android:text="@string/start"
+            android:visibility="gone"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="@color/queen_blue"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/toolbar"
+            app:strokeColor="@color/cerulean_crayola"
+            app:strokeWidth="5dp"
+            tools:text="@string/start" />
+
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

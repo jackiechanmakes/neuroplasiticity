@@ -15,10 +15,9 @@
     <fragment
         android:id="@+id/exerciseInstructionsFragment"
         android:name="com.example.neuroplasticity.ExerciseInstructionsFragment" >
-        //android:label="ExerciseInstructionsFragment" >
         <action
-            android:id="@+id/action_exerciseInstructionsFragment_to_exerciseStartFragment"
-            app:destination="@id/exerciseStartFragment" />
+            android:id="@+id/action_exerciseInstructionsFragment_to_exerciseTrainingFragment"
+            app:destination="@id/exerciseTrainingFragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseEndFragment"

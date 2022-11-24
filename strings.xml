@@ -7,7 +7,7 @@
     <string name="continue_button">Continue Exercise</string>
     <string name="restart_button">Restart Exercise</string>
     <string name="start_directions">Find the following words in sequence.</string>
-    <string name="instruction_directions">Find the words in the order they are presented.</string>\
+    <string name="instruction_directions">A list of words will appear on the screen. Memorize the words in the order they\'re presented.</string>
     <string name="results">Results</string>
     <string name="pause">Exercise Paused</string>
     <string name="instructions">Exercise Instructions</string>
