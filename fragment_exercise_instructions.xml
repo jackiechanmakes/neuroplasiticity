@@ -34,6 +34,15 @@
                 android:textColor="@color/queen_blue"
                 android:fontFamily="sans-serif-medium"
                 android:layout_gravity="center" />
+            <ImageButton
+                android:id="@+id/toolbar_pause_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_baseline_pause_circle_outline_24"
+                android:layout_gravity="end"
+                android:onClick="@{() -> exerciseInstructionsFragment.goToPauseScreen()}"
+                android:background="@color/eggshell"
+                android:layout_marginEnd="15dp"/>
         </androidx.appcompat.widget.Toolbar>
 
         <TextView
@@ -41,12 +50,11 @@
             android:layout_width="350dp"
             android:layout_height="wrap_content"
             android:layout_marginBottom="250dp"
-            android:background="@color/eggshell"
             android:fontFamily="sans-serif"
             android:gravity="center"
             android:padding="20dp"
             android:text="@string/instruction_directions"
-            android:textColor="@color/queen_blue"
+            android:textColor="@color/gunmetal"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -74,30 +82,53 @@
             app:strokeColor="@color/cerulean_crayola"
             app:strokeWidth="5dp"
             tools:text="@string/start"
+            android:layout_gravity="center"
             android:fontFamily="sans-serif-medium"
             android:textSize="30sp"/>
 
-        <TextView
+        <Button
             android:id="@+id/startButton"
-            android:layout_width="wrap_content"
+            android:layout_width="325dp"
             android:layout_height="wrap_content"
-            android:background="@color/eggshell"
+            android:layout_marginBottom="200dp"
             android:fontFamily="sans-serif-medium"
             android:onClick="@{() -> exerciseInstructionsFragment.goToStartScreen()}"
             android:padding="20dp"
-            android:text="@string/start"
-            android:visibility="gone"
+            android:text="@string/start_instructions"
             android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
             android:textColor="@color/queen_blue"
-            android:textSize="30sp"
+            android:textSize="34sp"
+            app:strokeColor="@color/queen_blue"
+            app:strokeWidth="5dp"
+            android:layout_gravity="center"
+            android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/toolbar"
-            app:strokeColor="@color/cerulean_crayola"
-            app:strokeWidth="5dp"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="@string/start" />
 
+        <Button
+            android:id="@+id/restartTutorialButton"
+            android:layout_width="325dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center"
+            android:onClick="@{() -> exerciseInstructionsFragment.goToInstructionsScreen()}"
+            android:padding="20dp"
+            android:text="@string/restart_instructions"
+            android:textAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            android:textColor="@color/queen_blue"
+            android:textSize="34sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/startButton"
+            app:strokeColor="@color/queen_blue"
+            app:strokeWidth="5dp"
+            tools:text="@string/restart_instructions" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

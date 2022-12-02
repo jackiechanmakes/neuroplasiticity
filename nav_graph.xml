@@ -18,6 +18,12 @@
         <action
             android:id="@+id/action_exerciseInstructionsFragment_to_exerciseTrainingFragment"
             app:destination="@id/exerciseTrainingFragment" />
+        <action
+            android:id="@+id/action_exerciseInstructionsFragment_to_exerciseInstructionsFragment"
+            app:destination="@id/exerciseInstructionsFragment" />
+        <action
+            android:id="@+id/action_exerciseInstructionsFragment_to_exercisePausedFragment"
+            app:destination="@id/exercisePausedFragment" />
     </fragment>
     <fragment
         android:id="@+id/exerciseEndFragment"
